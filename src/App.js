@@ -3,6 +3,8 @@ import Header from "./components/Header/Header";
 import ActionButton from "./components/ActionButton/ActionButton";
 import Footer from "./components/Footer/Footer";
 import MainContent from "./components/MainContent/MainContent";
+import Restaurants from "./components/Restaurants/Restaurants";
+import './App.css';
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         <ActionButton/>
       </Header>
       <MainContent>
-        <div>iini contentnya</div>
+        <Restaurants/>
       </MainContent>
       <Footer/>
     </div>
