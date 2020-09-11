@@ -1,0 +1,19 @@
+.restaurant-card-img-wrapper {
+  height: 60%;
+}
+
+.restaurant-card-info-wrapper {
+  height: 40%;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.restaurant-card-img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.restaurant-img-prev {
+  height: 100%;
+}

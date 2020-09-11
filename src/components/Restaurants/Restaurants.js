@@ -1,16 +1,15 @@
 import React from 'react';
-import Card from "../Card/Card";
 import './Restaurants.css';
+import Restaurant from "../Restaurant/Restaurant";
 
 const Restaurants = () => {
   return (
-      <div className={'mr-med ml-med'}>
+      <div className={'pt-1 pb-1'}>
         <div className={'restaurant-wrapper'}>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          <Restaurant/>
+          <Restaurant/>
+          <Restaurant/>
+          <Restaurant/>
         </div>
       </div>
   )

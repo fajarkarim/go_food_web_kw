@@ -20,6 +20,8 @@ function App() {
         </HeaderWrapper>
       </Header>
       <MainContent>
+        <h2>Pesan langsung dari restoran di Jakarta</h2>
+        <p className={'mb-1'}>Lihat-lihat makanan enak, pilih yang kamu suka, GoFood bakal antar ke kamu.</p>
         <Restaurants/>
       </MainContent>
       <Footer/>

@@ -3,7 +3,7 @@ import './MainContent.css'
 
 const MainContent = (props) => {
   return (
-      <main className='content'>
+      <main className='content mr-med ml-med'>
         {props.children}
       </main>
   )
