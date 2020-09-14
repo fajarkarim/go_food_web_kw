@@ -10,7 +10,7 @@ const Restaurant = () => {
             <img src={'https://via.placeholder.com/300'} alt={'food'}/>
           </div>
           <div className={'restaurant-card-info-wrapper'}>
-            <h3 className={'m-0 font-small'}>Nasi Kulit Gokskin, Kuningan</h3>
+            <h3 className={'m-0 font-small'}>Nasi Kulit Gokskin, kacangan</h3>
             <div className={'flex mt-small mb-small align-items-center'}>
               <div className={'width-75'}>
                 <div>
