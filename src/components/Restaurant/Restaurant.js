@@ -46,11 +46,13 @@ Restaurant.propTypes = {
   })
 };
 
-Restaurant.propTypes = {
-  restaurant: 'Unnamed',
-  thumbnail: 'https://via.placeholder.com/300',
-  rating: 0.0,
-  menus: 'none'
+Restaurant.defaultProps = {
+  restaurant: {
+    restaurant: 'Unnamed',
+    thumbnail: 'https://via.placeholder.com/300',
+    rating: 0.0,
+    menus: 'none'
+  }
 };
 
 export default Restaurant;
