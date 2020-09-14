@@ -14,7 +14,7 @@ const Restaurant = () => {
             <div className={'flex mt-small mb-small align-items-center'}>
               <div className={'width-75'}>
                 <div>
-                  <span className={'font-small'}>Aneka nasi, Ayam & bebek</span>
+                  <span className={'font-small'}>Aneka nasi, Ayam & karim</span>
                 </div>
               </div>
               <div className={'width-25'}>
