@@ -10,10 +10,6 @@ const SearchRestaurants = () => {
   const [search, setSearch] = useState('');
   const [isLoading, setLoading] = useState(false);
 
-  useEffect( () => {
-    fetchRestaurants();
-  }, []);
-
   const fetchRestaurants = async () => {
     try {
       setLoading(true);
@@ -24,6 +20,8 @@ const SearchRestaurants = () => {
       console.error(error)
     }
   };
+
+  useEffect(fetchRestaurants, []);
 
   const handleOnSearch = () => {
     fetchRestaurants();
