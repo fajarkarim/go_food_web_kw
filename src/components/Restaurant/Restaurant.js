@@ -41,7 +41,7 @@ Restaurant.propTypes = {
   restaurant: PropTypes.shape({
     name: PropTypes.string,
     thumbnail: PropTypes.string,
-    rating: PropTypes.number,
+    rating: PropTypes.string,
     menus: PropTypes.string
   })
 };
@@ -50,7 +50,7 @@ Restaurant.defaultProps = {
   restaurant: {
     name: 'Unnamed',
     thumbnail: 'https://via.placeholder.com/300',
-    rating: 0.0,
+    rating: "0",
     menus: 'none'
   }
 };
