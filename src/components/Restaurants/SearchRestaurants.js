@@ -41,7 +41,7 @@ const SearchRestaurants = () => {
     }
   };
 
-  const renderRestaurant = () => {
+  const renderRestaurants = () => {
     return (<div className={'pt-1 pb-1'}>
       <div className={'restaurant-wrapper'}>
         {
@@ -64,7 +64,7 @@ const SearchRestaurants = () => {
           </div>
         </div>
 
-        {isLoading ? <Loading/> : renderRestaurant()}
+        {isLoading ? <Loading/> : renderRestaurants()}
       </>
   )
 };
