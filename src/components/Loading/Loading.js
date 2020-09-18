@@ -3,7 +3,7 @@ import LoadingGif from '../../assets/loading2.gif';
 
 const Loading = () => {
   return (
-      <div className={'flex justify-center align-items-center'}>
+      <div className={'flex justify-center align-items-center'} data-testid='loading'>
         <img src={LoadingGif} alt={'loading'} height={320}  />
       </div>
   )

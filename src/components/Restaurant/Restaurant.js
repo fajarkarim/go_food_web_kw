@@ -8,7 +8,7 @@ const Restaurant = (props) => {
 
   return (
       <Card>
-        <div className={'one-hundred-percent-height'}>
+        <div className={'one-hundred-percent-height'} data-testid={`restaurant-${name}`}>
           <div className={'restaurant-card-img-wrapper'}>
             <img src={thumbnail} alt={'food'}/>
           </div>

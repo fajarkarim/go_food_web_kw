@@ -10,7 +10,7 @@ const SearchRestaurants = () => {
   const [search, setSearch] = useState('');
   const [isLoading, setLoading] = useState(false);
 
-  const fetchRestaurants = async () => {
+  const getRestaurants = async () => {
     try {
       setLoading(true);
       let zomatoRestaurants = await RestaurantsService.fetchRestaurants({ q: search });
@@ -21,10 +21,23 @@ const SearchRestaurants = () => {
     }
   };
 
-  useEffect(fetchRestaurants, []);
+  useEffect(() => {
+    const getRestaurantsUseEffect = async () => {
+      try {
+        const defaultSearch = 'Gyukaku';
+        setLoading(true);
+        let zomatoRestaurants = await RestaurantsService.fetchRestaurants({ q: defaultSearch });
+        setLoading(false);
+        setRestaurants(zomatoRestaurants);
+      } catch (error) {
+        console.error(error)
+      }
+    };
+    getRestaurantsUseEffect()
+  }, []);
 
   const handleOnSearch = () => {
-    fetchRestaurants();
+    getRestaurants();
   };
 
   const handleOnSearchChange = (event) => {
@@ -35,7 +48,7 @@ const SearchRestaurants = () => {
   const handleOnEnter = (event) => {
     const { key } = event;
     if (key === 'Enter') {
-      fetchRestaurants();
+      getRestaurants();
     }
   };
 
@@ -43,8 +56,8 @@ const SearchRestaurants = () => {
     return (<div className={'pt-1 pb-1'}>
       <div className={'restaurant-wrapper'}>
         {
-          restaurants.map((restaurant, index) => {
-            return <Restaurant key={index} restaurant={restaurant}/>
+          restaurants.map((restaurant) => {
+            return <Restaurant key={restaurant.id} restaurant={restaurant}/>
           })
         }
       </div>
@@ -55,8 +68,14 @@ const SearchRestaurants = () => {
       <>
         <div className={'pt-1 pb-1'}>
           <div className={'flex justify-center height-32'}>
-            <input className={'search-input mr-xs'} type="text" placeholder={'Search'
-            + ' Restaurant'} onChange={handleOnSearchChange} value={search} onKeyDown={handleOnEnter}/>
+            <input
+                className={'search-input mr-xs'}
+                type="text"
+                placeholder={'Search Restaurant'}
+                onChange={handleOnSearchChange}
+                value={search}
+                onKeyDown={handleOnEnter}
+                data-testid='search-input'/>
 
             <ActionButton label={'Search'} onClick={handleOnSearch}/>
           </div>

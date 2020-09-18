@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ActionButton = (props) => {
   const { label, onClick } = props;
   return (
-      <button className={'shadow border-0 ripple text-white'} onClick={onClick}>
+      <button className={'shadow border-0 ripple text-white'} onClick={onClick} data-testid={'action-button'}>
         <span className={'font-bold'}>{label}</span>
       </button>
   )

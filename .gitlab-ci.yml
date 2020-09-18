@@ -1,8 +1,15 @@
-image: "node:latest"
+image: "node:12-alpine"
 
 stages:
 - build
+- test
 - deploy
+
+test_app:
+  stage: test
+  script:
+  - yarn install
+  - npm run test
 
 build_app:
   stage: build

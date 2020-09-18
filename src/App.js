@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import ActionButton from "./components/ActionButton/ActionButton";
 import Footer from "./components/Footer/Footer";
 import MainContent from "./components/MainContent/MainContent";
-import SearchRestaurants from "./components/Restaurants/SearchRestaurants";
+import SearchRestaurants from "./components/SearchRestaurants/SearchRestaurants";
 import HeaderWrapper from "./components/Header/HeaderWrapper";
 
 import './App.css';
