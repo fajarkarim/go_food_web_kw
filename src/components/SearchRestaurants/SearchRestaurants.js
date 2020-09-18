@@ -22,7 +22,17 @@ const SearchRestaurants = () => {
   };
 
   useEffect(() => {
-    getRestaurants()
+    const getRestaurantsInsideEffect = async () => {
+      try {
+        setLoading(true);
+        let zomatoRestaurants = await RestaurantsService.fetchRestaurants({ q: search });
+        setLoading(false);
+        setRestaurants(zomatoRestaurants);
+      } catch (error) {
+        console.error(error)
+      }
+    };
+    getRestaurantsInsideEffect()
   }, []);
 
   const handleOnSearch = () => {
