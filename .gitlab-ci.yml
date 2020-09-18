@@ -2,7 +2,13 @@ image: "node:latest"
 
 stages:
 - build
+- test
 - deploy
+
+test_app:
+  stage: test
+  script:
+  - npm run test
 
 build_app:
   stage: build
