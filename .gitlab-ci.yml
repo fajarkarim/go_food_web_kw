@@ -8,6 +8,7 @@ stages:
 test_app:
   stage: test
   script:
+  - yarn install
   - npm run test
 
 build_app:
