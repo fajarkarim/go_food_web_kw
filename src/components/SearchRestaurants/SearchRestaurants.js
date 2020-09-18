@@ -22,8 +22,19 @@ const SearchRestaurants = () => {
   };
 
   useEffect(() => {
-    getRestaurants()
-  });
+    const getRestaurantsUseEffect = async () => {
+      try {
+        const defaultSearch = 'Gyukaku';
+        setLoading(true);
+        let zomatoRestaurants = await RestaurantsService.fetchRestaurants({ q: defaultSearch });
+        setLoading(false);
+        setRestaurants(zomatoRestaurants);
+      } catch (error) {
+        console.error(error)
+      }
+    };
+    getRestaurantsUseEffect()
+  }, []);
 
   const handleOnSearch = () => {
     getRestaurants();
