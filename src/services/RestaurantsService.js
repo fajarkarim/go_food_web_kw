@@ -13,18 +13,19 @@ class RestaurantsService {
     let { restaurants } = await response.json();
 
     let mappedResponse = restaurants.map(restaurantData => {
-      const { restaurant: { name, thumb, user_rating, cuisines} } = restaurantData;
+      const { restaurant: { id, name, thumb, user_rating, cuisines} } = restaurantData;
       const defaultThumbnail = 'https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/8333bc70-4ed3-4b12-92ee-2ab59d57247b_restaurant-image_1596583458965.jpg?h=445&w=534&fit=crop&auto=compress';
       const wrappedMenus = cuisines.length > 15 ? cuisines.substring(0,15) + '...' : cuisines;
       const thumbnail = thumb.length < 1 ? defaultThumbnail : thumb;
 
-      return {
-        name: name,
-        thumbnail: thumbnail,
-        rating: user_rating.aggregate_rating,
-        menus: wrappedMenus
-      }
-    });
+    return {
+      id: id,
+      name: name,
+      thumbnail: thumbnail,
+      rating: user_rating.aggregate_rating.toString(),
+      menus: wrappedMenus
+    }
+  });
 
     return mappedResponse;
   }
